@@ -1,11 +1,19 @@
 {
   "name": "floema",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -p --progress --config webpack.config.build.js",
+    "development": "webpack server --progress --config webpack.config.development.js",
+    "start": "npm run development"
   },
   "author": "Borges",
-  "license": "ISC"
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0",
+    "webpack-merge": "^5.8.0"
+  }
 }
