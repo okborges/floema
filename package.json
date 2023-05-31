@@ -2,9 +2,11 @@
   "name": "floema",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --progress --config webpack.config.build.js",
-    "development": "webpack server --progress --config webpack.config.development.js",
-    "start": "npm run development"
+    "backend:build": "node server.js",
+    "backend:development": "nodemon server.js",
+    "frontend:build": "webpack --progress --config webpack.config.build.js",
+    "frontend:development": "webpack server --progress --config webpack.config.development.js",
+    "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\""
   },
   "author": "Borges",
   "devDependencies": {
@@ -31,6 +33,8 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pug": "^3.0.2"
   }
 }
