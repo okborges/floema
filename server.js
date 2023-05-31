@@ -7,14 +7,19 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-  res.render('template', {
-    meta: {
-      data: {
-        title: 'Floema',
-        description: 'Pug is a template engine for Node.js and for the browser.'
-      }
-    }
-  });
+  res.render('pages/home');
+});
+
+app.get('/about', (req, res) => {
+  res.render('pages/about');
+});
+
+app.get('/detail/:', (req, res) => {
+  res.render('pages/detail');
+});
+
+app.get('/collections', (req, res) => {
+  res.render('pages/collections');
 });
 
 app.listen(port, () => {
