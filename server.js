@@ -14,14 +14,14 @@ app.get('/about', (req, res) => {
   res.render('pages/about');
 });
 
-app.get('/detail/:', (req, res) => {
-  res.render('pages/detail');
-});
-
 app.get('/collections', (req, res) => {
   res.render('pages/collections');
 });
 
+app.get('/detail/:uid', (req, res) => {
+  res.render('pages/detail');
+});
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening at http://localhost:${port}`);
 });
